@@ -3,12 +3,16 @@ from flask import Flask
 from flask_cors import CORS
 from database.database import init_database 
 from config import database_file_path, init_sql
-from services import results, graficos
+from services import results, graficos, fluxo
 from flask_sslify import SSLify
 
 app = Flask(__name__)
 sslify = SSLify(app)
 CORS(app)
+
+@app.get('/')
+def index():
+    return fluxo.fluxo()
 
 @app.get('/graficos')
 def get_graficos():
