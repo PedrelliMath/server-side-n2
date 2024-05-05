@@ -4,8 +4,10 @@ from flask_cors import CORS
 from database.database import init_database 
 from config import database_file_path, init_sql
 from services import results, graficos
+from flask_sslify import SSLify
 
 app = Flask(__name__)
+sslify = SSLify(app)
 CORS(app)
 
 @app.get('/graficos')
