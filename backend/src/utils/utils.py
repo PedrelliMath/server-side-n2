@@ -3,7 +3,6 @@ import time
 from random import random, seed
 
 from typing import List, Tuple
-from sklearn.utils import shuffle
 from functools import wraps
 from copy import deepcopy
 
